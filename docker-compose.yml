@@ -11,9 +11,22 @@ services:
     depends_on:
       - mongo
     ports:
-      - "4000:4000"
+      - "3000:3000"
     environment:
       - MONGO_URI=mongodb://mongo:27017/microservices
+      - JWT_SECRET=SSHHhhhThisIsMySecret
+      - API_KEY=TreesAreBeautiful
+
+  admin:
+    build: ./admin
+    depends_on:
+      - mongo
+    ports:
+      - "3001:3001"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/microservices
+      - JWT_SECRET=SSHHhhhThisIsMySecret
+      - API_KEY=TreesAreBeautiful
 
 volumes:
   mongo-data:

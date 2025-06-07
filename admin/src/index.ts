@@ -9,12 +9,12 @@ const start = async () => {
   try {
     await connectToDatabase();
 
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT || 3001;
     app.listen(PORT, () => {
-      console.log(`>>> [AUTH SERVICE] Listening on port ${PORT}...`);
+      console.log(`>>> [ADMIN SERVICE] Listening on port ${PORT}...`);
     });
   } catch (error) {
-    console.error('>>> [AUTH SERVICE] Failed to start the service:', error);
+    console.error('>>> [ADMIN SERVICE] Failed to start the service:', error);
     process.exit(1);
   }
 };
