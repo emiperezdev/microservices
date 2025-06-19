@@ -28,5 +28,16 @@ services:
       - JWT_SECRET=SSHHhhhThisIsMySecret
       - API_KEY=TreesAreBeautiful
 
+  reports:
+    build: ./reports
+    depends_on:
+      - mongo
+    ports:
+      - "3002:3002"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/microservices
+      - JWT_SECRET=SSHHhhhThisIsMySecret
+      - API_KEY=TreesAreBeautiful
+
 volumes:
   mongo-data:
