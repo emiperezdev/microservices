@@ -39,10 +39,10 @@ services:
       - JWT_SECRET=SSHHhhhThisIsMySecret
       - API_KEY=TreesAreBeautiful
 
-  notif-service:
-    build: ./notif-service
+  notification-service:
+    build: ./notification-service
     ports:
-      - "8080:8080"
+      - "3003:3003"
     depends_on:
       - mongo
     environment:
