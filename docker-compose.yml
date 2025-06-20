@@ -39,5 +39,15 @@ services:
       - JWT_SECRET=SSHHhhhThisIsMySecret
       - API_KEY=TreesAreBeautiful
 
+  notif-service:
+    build: .
+    container_name: notif-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    environment:
+      - RUST_LOG=info
+
 volumes:
   mongo-data:
