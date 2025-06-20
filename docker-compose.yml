@@ -40,8 +40,7 @@ services:
       - API_KEY=TreesAreBeautiful
 
   notif-service:
-    build: .
-    container_name: notif-service
+    build: ./notif-service
     ports:
       - "8080:8080"
     depends_on:
